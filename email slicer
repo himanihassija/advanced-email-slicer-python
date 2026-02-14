@@ -1,0 +1,28 @@
+import re
+
+def slice_email(email):
+    pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+
+    if not re.match(pattern, email):
+        return "Invalid email format."
+
+    username, domain = email.split("@")
+    domain_name, extension = domain.rsplit(".", 1)
+
+    return {
+        "Username": username,
+        "Domain": domain,
+        "Domain Name": domain_name,
+        "Extension": extension
+    }
+
+
+email = input("Enter an email address: ").strip()
+result = slice_email(email)
+
+if isinstance(result, dict):
+    print("\n--- Email Analysis ---")
+    for key, value in result.items():
+        print(f"{key}: {value}")
+else:
+    print(result)
