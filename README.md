@@ -35,6 +35,9 @@ Domain: university.edu
 Domain Name: university  
 Extension: edu  
 
+## Demo
+https://github.com/himanihassija/advanced-email-slicer-python/blob/main/email%20slicer%20frontend.png
+
 ## Project Structure
 email_slicer.py  
 README.md  
